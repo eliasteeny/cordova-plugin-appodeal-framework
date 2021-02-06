@@ -212,18 +212,18 @@ public class AppodealPlugin extends CordovaPlugin {
             });
             return true;
         } else if (action.equals(ACTION_RESUME)) {
-            final int adType = args.getInt(0);
-            cordova.getActivity().runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    int rAdType = getAdType(adType);
-                    if (rAdType == Appodeal.BANNER || rAdType == Appodeal.BANNER_BOTTOM
-                            || rAdType == Appodeal.BANNER_TOP) {
-                        Appodeal.onResume(cordova.getActivity(), rAdType);
-                    }
-                }
-            });
-            return true;
+            // final int adType = args.getInt(0);
+            // cordova.getActivity().runOnUiThread(new Runnable() {
+            //     @Override
+            //     public void run() {
+            //         int rAdType = getAdType(adType);
+            //         if (rAdType == Appodeal.BANNER || rAdType == Appodeal.BANNER_BOTTOM
+            //                 || rAdType == Appodeal.BANNER_TOP) {
+            //             Appodeal.onResume(cordova.getActivity(), rAdType);
+            //         }
+            //     }
+            // });
+            return false;
         } else if (action.equals(ACTION_SET_AUTO_CACHE)) {
             final int adType = args.getInt(0);
             final boolean autoCache = args.getBoolean(1);
