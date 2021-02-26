@@ -76,6 +76,14 @@
 
       <header-file src="src/ios/AppodealPlugin.h"/>
       <source-file src="src/ios/AppodealPlugin.m"/>
-      <framework src="Appodeal" type="podspec" spec="2.8.1.1" />
+      <!-- <framework src="Appodeal" type="podspec" spec="2.8.1.1" /> -->
+      <podspec>
+        <config>
+            <source url="https://github.com/CocoaPods/Specs.git"/>
+        </config>
+        <pods use-frameworks="true">
+            <pod name="Appodeal" spec="2.8.1.1" />
+        </pods>
+    </podspec>
     </platform>
 </plugin>
