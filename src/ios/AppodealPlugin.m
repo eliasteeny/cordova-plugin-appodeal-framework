@@ -94,7 +94,7 @@ int nativeShowStyleForType(int adTypes) {
 // interface implementation
 - (void) initialize:(CDVInvokedUrlCommand*)command
 {
-    [Appodeal setFramework:APDFrameworkCordova];
+    // [Appodeal setFramework:APDFrameworkCordova];
     if ([[[command arguments] objectAtIndex:1] intValue] & BANNER) {
         if (bannerOverlap) {
             [self setDelegateOnOverlap:(AppodealAdType)nativeAdTypesForType([[[command arguments] objectAtIndex:1] intValue])];
@@ -220,10 +220,10 @@ int nativeShowStyleForType(int adTypes) {
 }
 
 - (void) setBannerOverLap:(CDVInvokedUrlCommand*)command {
-    if (![Appodeal isInitalized]) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarDidChangeFrame:) name: UIApplicationDidChangeStatusBarFrameNotification object:nil];
-        bannerOverlap = [[[command arguments] objectAtIndex:0] boolValue];
-    }
+    // if (![Appodeal isInitalized]) {
+    //     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusBarDidChangeFrame:) name: UIApplicationDidChangeStatusBarFrameNotification object:nil];
+    //     bannerOverlap = [[[command arguments] objectAtIndex:0] boolValue];
+    // }
 }
 
 - (void) setLogLevel:(CDVInvokedUrlCommand*)command {
@@ -294,36 +294,36 @@ int nativeShowStyleForType(int adTypes) {
 }
 
 - (void) isInitalized:(CDVInvokedUrlCommand*)command{
-    CDVPluginResult* pluginResult = nil;
+    // CDVPluginResult* pluginResult = nil;
 
-    if([Appodeal isInitalized])
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:YES];
-    else
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:NO];
+    // if([Appodeal isInitalized])
+    //     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:YES];
+    // else
+    //     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:NO];
 
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    // [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (void) canShow:(CDVInvokedUrlCommand*)command {
-    CDVPluginResult* pluginResult = nil;
+    // CDVPluginResult* pluginResult = nil;
 
-    if([Appodeal canShowAd:nativeShowStyleForType([[[command arguments] objectAtIndex:0] intValue]) forPlacement:@""])
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:YES];
-    else
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:NO];
+    // if([Appodeal canShowAd:nativeShowStyleForType([[[command arguments] objectAtIndex:0] intValue]) forPlacement:@""])
+    //     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:YES];
+    // else
+    //     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:NO];
 
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    // [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (void) canShowWithPlacement:(CDVInvokedUrlCommand*)command {
-    CDVPluginResult* pluginResult = nil;
+    // CDVPluginResult* pluginResult = nil;
     
-    if([Appodeal canShowAd:nativeShowStyleForType([[[command arguments] objectAtIndex:0] intValue]) forPlacement:[[command arguments] objectAtIndex:0]])
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:YES];
-    else
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:NO];
+    // if([Appodeal canShowAd:nativeShowStyleForType([[[command arguments] objectAtIndex:0] intValue]) forPlacement:[[command arguments] objectAtIndex:0]])
+    //     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:YES];
+    // else
+    //     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:NO];
     
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    // [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (void) trackInAppPurchase:(CDVInvokedUrlCommand*)command {
