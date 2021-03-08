@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin id="cordova-plugin-appodeal-framework" version="1.0.2" xmlns:android="http://schemas.android.com/apk/res/android" xmlns="http://apache.org/cordova/ns/plugins/1.0">
-  <name>Appodeal Plugin</name>
+  <name>AppodealPlugin</name>
   <description>Appodeal Plugin</description>
   <author>Appodeal</author>
 
@@ -75,34 +75,45 @@
       </config-file>
 
       <header-file src="src/ios/AppodealPlugin.h"/>
+      <header-file src="src/ios/AppodealPlugin-Bridging-Header.h"/>
       <source-file src="src/ios/AppodealPlugin.m"/>
-      <!-- <framework src="Appodeal" type="podspec" spec="2.8.1.1" /> -->
+      <source-file src="src/ios/File.swift" />
 
 
-        <pods-config ios-min-version="10.0" use-frameworks="true">
-             <!-- optionally add private spec sources -->
-            <source url="https://github.com/appodeal/CocoaPods.git"/>
-            <source url="https://cdn.cocoapods.org/"/>
-        </pods-config>
+    <podspec>
+      <config>
+        <source url="https://github.com/appodeal/CocoaPods.git" />
+        <source url="https://cdn.cocoapods.org/"/>
+      </config>
+      <pods use-frameworks="true">
 
-        <pod  name="APDAdColonyAdapter" spec="2.8.1.1"/> 
+       
+    <pod  name="APDAdColonyAdapter" spec="2.8.1.1"/>  
     <pod  name="APDAmazonAdsAdapter" spec="2.8.1.1"/> 
     <pod  name="APDAppLovinAdapter" spec="2.8.1.1"/> 
     <pod  name="APDBidMachineAdapter" spec="2.8.1.2"/> 
-    <pod  name="APDChartboostAdapter" spec="2.8.1.1"/> 
-    <pod  name="APDFacebookAudienceAdapter" spec="2.8.1.2"/> 
+    <pod  name="APDChartboostAdapter" spec="2.8.1.1"/>
+    <pod  name="APDFacebookAudienceAdapter" spec="2.8.1.2"/>  
     <pod  name="APDGoogleAdMobAdapter" spec="2.8.1.1"/> 
     <pod  name="APDInMobiAdapter" spec="2.8.1.1"/> 
     <pod  name="APDIronSourceAdapter" spec="2.8.1.1"/> 
     <pod  name="APDMintegralAdapter" spec="2.8.1.1"/> 
     <pod  name="APDMyTargetAdapter" spec="2.8.1.1"/> 
     <pod  name="APDOguryAdapter" spec="2.8.1.1"/> 
-    <pod  name="APDSmaatoAdapter" spec="2.8.1.1"/> 
+    <pod  name="APDSmaatoAdapter" spec="2.8.1.1"/>  
     <pod  name="APDStartAppAdapter" spec="2.8.1.1"/> 
     <pod  name="APDTapjoyAdapter" spec="2.8.1.1"/> 
     <pod  name="APDTwitterMoPubAdapter" spec="2.8.1.1"/> 
     <pod  name="APDUnityAdapter" spec="2.8.1.1"/> 
     <pod  name="APDVungleAdapter" spec="2.8.1.1"/> 
     <pod  name="APDYandexAdapter" spec="2.8.1.1"/>
+
+      </pods>
+    </podspec>
+     
+
+
+
+    
     </platform>
 </plugin>
