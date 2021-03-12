@@ -762,14 +762,14 @@ int nativeShowStyleForType(int adTypes) {
     [self.commandDelegate sendPluginResult:pluginResult callbackId:self.rewardedCallbackID];
 }
 
-- (void)rewardedVideoWillDismiss {
+- (void)rewardedVideoWillDismissAndWasFullyWatched:(BOOL)wasFullyWatched{
     NSDictionary *vals = @{CALLBACK_EVENT: CALLBACK_CLOSED, @"finished": [NSNumber numberWithBool:isRewardedFinished]};
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:vals];
     [pluginResult setKeepCallback:[NSNumber numberWithBool:YES]];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:self.rewardedCallbackID];
 }
 
-- (void)rewardedVideoDidFinish:(NSUInteger)rewardAmount name:(NSString *)rewardName {
+- (void)rewardedVideoDidFinish:(float)rewardAmount name:(NSString *)rewardName {
     isRewardedFinished = YES;
     
     NSMutableDictionary * rewardDict = [NSMutableDictionary new];
