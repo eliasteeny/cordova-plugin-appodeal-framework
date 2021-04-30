@@ -390,7 +390,7 @@ public class AppodealPlugin extends CordovaPlugin {
             cordova.getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Appodeal.setFramework("cordova", pluginVersion, null, false, false);
+                    // Appodeal.setFramework("cordova", pluginVersion, null, false, false);
                 }
             });
             return true;
