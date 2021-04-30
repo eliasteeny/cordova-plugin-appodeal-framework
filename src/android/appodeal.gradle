@@ -13,7 +13,7 @@ repositories {
 
 dependencies {
 	// Appodeal SDK
-	implementation ('com.appodeal.ads:sdk:2.8.1.+') {
+	implementation ('com.appodeal.ads:sdk:2.9.3.+') {
         exclude group: 'com.appodeal.ads.sdk.networks', module: 'vungle'
     }
 }
