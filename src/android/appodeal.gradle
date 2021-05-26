@@ -13,5 +13,9 @@ repositories {
 
 dependencies {
 	// Appodeal SDK
-    implementation 'com.appodeal.ads:sdk:2.9.3.+'
+    implementation 'com.appodeal.ads:sdk:2.10.0.+'
+    implementation 'com.appodeal.ads.sdk.networks:chartboost:2.10.0.6'
+    implementation 'com.appodeal.ads.sdk.networks:inmobi:2.10.0.7'
+    implementation 'com.appodeal.ads.sdk.networks:mopub:2.10.0.4'
+    implementation 'com.appodeal.ads.sdk.networks:tapjoy:2.10.0.7'
 }
